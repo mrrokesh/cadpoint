@@ -1,0 +1,120 @@
+:root {
+  --brand: #0047b3;
+  --brand-dark: #003588;
+  --text-dark: #1e293b;
+  --text-light: #475569;
+  --radius: 14px;
+}
+
+/* Section */
+.Courses-section {
+  padding: 70px 6%;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+.Courses-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 45px;
+}
+
+.Courses-heading::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: var(--brand);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* 3 Columns × 2 Rows */
+.Courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .Courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .Courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.Courses-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transition: 0.45s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.Courses-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.Courses-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.Courses-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.Courses-card:hover .Courses-image img {
+  transform: scale(1.12);
+}
+
+/* Content */
+.Courses-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.Courses-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.Courses-content p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 18px;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+/* Button */
+.Courses-content button {
+  padding: 10px 20px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.Courses-content button:hover {
+  background: var(--brand-dark);
+}

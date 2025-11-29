@@ -1,0 +1,188 @@
+/* ================= Responsive ================= */
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+
+  .courses-container {
+    padding: 0 1.5rem;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .course-card {
+    max-width: 100%;
+  }
+
+  .course-image {
+    height: 150px;
+  }
+
+  .filter-bar {
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+
+  .filter-item select {
+    min-width: 140px;
+  }
+
+  .form-box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile (576px and below) */
+@media (max-width: 576px) {
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  /* Filter Bar */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .filter-item select {
+    width: 100%;
+  }
+
+  .filter-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Course Grid */
+  .course-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .course-card {
+    padding: 0.8rem;
+  }
+
+  .course-image {
+    height: 120px;
+  }
+
+  .course-title {
+    font-size: 1.1rem;
+  }
+
+  .availability {
+    font-size: 0.8rem;
+  }
+
+  .meta-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .category-label,
+  .duration-label {
+    font-size: 0.75rem;
+  }
+
+  .course-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .language-btn,
+  .enquiry-btn {
+    width: 50%;
+    font-size: 0.8rem;
+  }
+
+  /* Popups */
+  .language-popup,
+  .tools-popup {
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.8rem;
+  }
+
+  .tools-list li {
+    font-size: 0.8rem;
+  }
+
+  /* Enquiry Form */
+  .form-box {
+    width: 95%;
+    padding: 1.2rem;
+  }
+
+  .form-box h2 {
+    font-size: 1.2rem;
+  }
+
+  .form-box input,
+  .form-box textarea {
+    font-size: 0.85rem;
+  }
+
+  .submit-btn,
+  .skip-btn {
+    flex: 1 1 100%;
+    font-size: 0.85rem;
+  }
+
+  /* No results message */
+  .no-results {
+    padding: 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small mobile (375px and below) */
+@media (max-width: 375px) {
+
+  .course-title {
+    font-size: 1rem;
+  }
+
+  .availability {
+    font-size: 0.75rem;
+  }
+
+  .category-label,
+  .duration-label {
+    font-size: 0.7rem;
+  }
+
+  .filter-item label {
+    font-size: 0.8rem;
+  }
+
+  .filter-item select {
+    font-size: 0.8rem;
+  }
+
+  .course-description {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Filter actions responsive */
+@media (max-width: 576px) {
+  .filter-actions {
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align left */
+    gap: 0.5rem; /* spacing between buttons */
+  }
+
+  /* Make buttons full width */
+  .filter-actions button {
+    width: 100%;
+  }
+}
+

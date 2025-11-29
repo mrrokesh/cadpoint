@@ -1,0 +1,144 @@
+.about-section {
+  width: 100%;
+  padding: 60px 5%;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+
+.text-block {
+  flex: 1;
+}
+
+.text-block h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1a237e;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.text-block p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.text-block ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 35px;
+}
+
+.text-block ul li {
+  font-size: 16px;
+  padding: 6px 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+
+.text-block button {
+  background: #1a237e;
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.text-block button:hover {
+  transform: translateY(-4px);
+  background: #121a63;
+}
+
+
+.image-block {
+  flex: 1;
+}
+
+.image-box {
+  width: 100%;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 14px;
+  transition: transform 0.6s ease;
+}
+
+.image-box:hover img {
+  transform: scale(1.06);
+}
+
+
+.shine-overlay {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg, transparent, rgba(255,255,255,0.4), transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.6s ease;
+}
+
+.image-box:hover .shine-overlay {
+  left: 120%;
+}
+
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-left {
+  animation: slideLeft 0.9s ease forwards;
+}
+
+.animate-right {
+  animation: slideRight 0.9s ease forwards;
+}
+
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-block {
+    order: -1;
+  }
+
+  .text-block h2 {
+    font-size: 32px;
+  }
+}

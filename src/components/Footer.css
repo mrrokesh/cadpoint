@@ -1,0 +1,268 @@
+/* ================================ Base Footer ================================ */
+.lx-footer {
+  background: #f7f9fc;
+  color: #333;
+  border-top: 6px solid #0370ff;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.lx-footer a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.lx-footer a:hover {
+  color: #004aad;
+}
+
+/* ================= Ribbon ================= */
+.lx-footer-ribbon {
+  background: linear-gradient(to right, #002554, #012966);
+  padding: 14px 8px;
+  text-align: center;
+  animation: ribbonFade 1s ease forwards;
+}
+
+@keyframes ribbonFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lx-footer-company {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+
+.lx-footer-brand {
+  color: #8cc1ff;
+  font-weight: 800;
+}
+
+/* ================= Contact Cards ================= */
+.lx-footer-contact-box {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px 10px;
+}
+
+.lx-footer-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.lx-footer-card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.lx-footer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.lx-footer-icon {
+  background: #004aad;
+  padding: 12px;
+  border-radius: 50%;
+  color: white;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.lx-footer-card:hover .lx-footer-icon {
+  transform: scale(1.1);
+  background: #00338a;
+}
+
+.lx-footer-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ================= Main Footer Columns ================= */
+.lx-footer-main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px 20px 20px;
+  animation: lxFadeIn 0.8s ease forwards;
+}
+
+.lx-footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 35px;
+}
+
+.lx-footer-heading {
+  color: #004aad;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.lx-footer-heading::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 2px;
+  background: #004aad;
+  margin-top: 4px;
+}
+
+.lx-footer-col ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+}
+
+/* ================= Subscribe / Social ================= */
+.lx-footer-note {
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+}
+
+.lx-footer-social {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+}
+
+.lx-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e1e5eb;
+  color: #004aad;
+  transition: all 0.3s ease;
+}
+
+.lx-footer-social a:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: #004aad;
+  color: #fff;
+}
+
+/* Subscribe input + button */
+.lx-footer-subscribe {
+  display: flex;
+  align-items: stretch;
+  max-width: 460px;
+  width: 100%;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.lx-footer-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.lx-footer-input:focus {
+  outline: none;
+  border-color: #004aad;
+  box-shadow: 0 0 6px rgba(0, 74, 173, 0.2);
+}
+
+.lx-footer-join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  background: #004aad;
+  color: #fff;
+  border: 1px solid #004aad;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lx-footer-join-btn:hover {
+  background: #00338a;
+  transform: translateY(-2px);
+}
+
+/* ================= Bottom Bar ================= */
+.lx-footer-bottom {
+  background: #e8ecf2;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 14px;
+  animation: lxFadeIn 0.8s ease forwards;
+}
+
+.lx-footer-bottom .lx-footer-brand {
+  color: #004aad;
+  font-weight: 600;
+}
+
+/* ================= Animations ================= */
+@keyframes lxFadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* ================= Responsive ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .lx-footer-contact-grid,
+  .lx-footer-cols {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .lx-footer-contact-box,
+  .lx-footer-main {
+    padding: 20px 15px;
+  }
+
+  .lx-footer-cols {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .lx-footer-heading::after {
+    width: 25px;
+  }
+
+  .lx-footer-social a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lx-footer-input,
+  .lx-footer-join-btn {
+    flex: 1 1 100%;
+    border-radius: 8px;
+  }
+
+  .lx-footer-subscribe {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

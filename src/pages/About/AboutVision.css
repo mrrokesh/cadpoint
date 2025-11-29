@@ -1,0 +1,258 @@
+/* ===========================
+   General Section
+=========================== */
+.vision-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #f5f7fa;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Vision Main Container
+=========================== */
+.vision-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
+
+.vision-container.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.vision-text {
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+.vision-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+.vision-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* IMAGE */
+.vision-image {
+  flex: 1 1 450px;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out 0.3s;
+}
+
+.vision-container.slide-in .vision-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.vision-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   Future Section
+=========================== */
+.future-section {
+  margin-top: 80px;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.future-section.fade-in-5s {
+  opacity: 1;
+}
+
+.future-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.future-item {
+  flex: 1 1 300px;
+  max-width: 300px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.future-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  margin-bottom: 15px;
+}
+
+.future-item p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Future Paragraph Sliding
+=========================== */
+.Future {
+  width: 70%;
+  margin: 0 auto 80px auto;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.Future p {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+/* Slide Left + Right */
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+
+.Future p.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 1.2s ease-out;
+}
+
+@keyframes slideFromLeft {
+  0% { opacity: 0; transform: translateX(-80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideFromRight {
+  0% { opacity: 0; transform: translateX(80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade/Slide */
+.future-item.fade-slide {
+  animation: fadeSlide 1.5s ease-out forwards;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   Vision Video
+=========================== */
+.vision-video {
+  margin-top: 80px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.vision-video.slide-in-video {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-video h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.vision-video video {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   MOBILE + TABLET RESPONSIVE
+=========================== */
+
+@media (max-width: 1024px) {
+  .vision-text h2 { font-size: 32px; }
+  .Future { width: 80%; }
+}
+
+@media (max-width: 768px) {
+  .vision-section { padding: 60px 20px; }
+
+  .vision-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vision-text {
+    padding: 10px;
+  }
+
+  .vision-text h2 {
+    font-size: 28px;
+  }
+
+  .vision-image img,
+  .future-item img {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .future-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Future {
+    width: 90%;
+    font-size: 16px;
+    gap: 20px;
+  }
+
+  .vision-video video {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .vision-text h2 {
+    font-size: 24px;
+  }
+
+  .Future {
+    width: 95%;
+  }
+
+  .future-item img {
+    height: 150px;
+  }
+}

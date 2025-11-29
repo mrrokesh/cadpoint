@@ -1,0 +1,99 @@
+/* ==========================
+   FILTER BAR RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .filter-item select {
+    min-width: 100%;
+  }
+
+  .filter-actions {
+    flex-direction: column; /* stack buttons vertically */
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .filter-actions button {
+    width: 100%;
+  }
+}
+
+/* ==========================
+   COURSE CARDS RESPONSIVE
+=========================== */
+@media (max-width: 576px) {
+  .course-card {
+    max-width: 100%;
+  }
+
+  .course-image {
+    height: 150px;
+  }
+
+  .course-title {
+    font-size: 1.1rem;
+  }
+
+  .availability,
+  .duration-label {
+    font-size: 0.8rem;
+  }
+
+  .course-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================
+   ENQUIRY FORM RESPONSIVE
+=========================== */
+@media (max-width: 480px) {
+  .form-box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .submit-btn,
+  .skip-btn {
+    width: 100%;
+  }
+}
+
+/* ==========================
+   LANGUAGE / TOOLS POPUPS RESPONSIVE
+=========================== */
+@media (max-width: 576px) {
+  .language-popup,
+  .tools-popup {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Filter actions responsive - mobile */
+@media (max-width: 576px) {
+  .filter-actions {
+    flex-direction: column;    /* stack vertically */
+    align-items: center;       /* center horizontally */
+    gap: 0.5rem;               /* spacing between buttons */
+    width: 100%;
+  }
+
+  .filter-actions button {
+    width: auto;               /* let button size adjust naturally */
+    min-width: 140px;          /* optional minimum width */
+  }
+}

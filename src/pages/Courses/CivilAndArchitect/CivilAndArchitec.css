@@ -1,0 +1,231 @@
+/* ================= Courses Container ================= */
+.courses-container {
+  margin-top: 120px;
+  margin-bottom: 100px;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #004aad;
+  text-align: center;
+}
+
+/* ================= Course Grid ================= */
+.course-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+/* ================= Course Card ================= */
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.availability {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: green;
+  font-weight: 500;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.duration-label,
+.category-label {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.course-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.enquiry-btn,
+.view-courses-btn {
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.enquiry-btn:hover,
+.view-courses-btn:hover {
+  background: #0066ff;
+}
+
+/* ================= ENQUIRY FORM ================= */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.form-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.form-box h2 {
+  margin-bottom: 1rem;
+  color: #004aad;
+  font-size: 1.5rem;
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.submit-btn,
+.skip-btn {
+  flex: 1 1 45%;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ================= Responsive ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .course-card {
+    max-width: 100%;
+  }
+
+  .form-box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .course-title {
+    font-size: 1.1rem;
+  }
+
+  .course-description {
+    font-size: 0.85rem;
+  }
+
+  .meta-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .enquiry-btn,
+  .view-courses-btn {
+    width: 50%;
+    font-size: 0.85rem;
+    
+  }
+
+  .form-box h2 {
+    font-size: 1.25rem;
+  }
+
+  .form-box input,
+  .form-box textarea {
+    font-size: 0.85rem;
+  }
+
+  .submit-btn,
+  .skip-btn {
+    flex: 1 1 100%;
+  }
+}

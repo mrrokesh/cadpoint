@@ -1,0 +1,110 @@
+.about-page {
+  margin-top: 10px; /* to avoid navbar overlap */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.sticky-section {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1s ease;
+}
+
+.sticky-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-left h2 {
+  color: #004aad;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-left p, .about-left ul {
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-left ul {
+  margin: 1rem 0;
+  padding-left: 1rem;
+}
+
+.about-right {
+  flex: 1;
+  text-align: center;
+}
+
+.about-right img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  transition: transform 1s ease;
+}
+
+.show .about-right img {
+  transform: scale(1.05);
+}
+
+/* Vision / Mission Sections */
+.vision-section, .mission-section {
+  text-align: center;
+  background: #fff;
+  padding: 4rem 2rem;
+}
+
+.text-block h2 {
+  color: #004aad;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-block p {
+  color: #444;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Button */
+.more-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 10px 25px;
+  background-color: #004aad;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.more-btn:hover {
+  background-color: #0073e6;
+  transform: translateY(-3px);
+}

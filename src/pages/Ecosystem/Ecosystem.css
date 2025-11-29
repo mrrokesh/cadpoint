@@ -1,0 +1,260 @@
+/* ===========================
+   Ecosystem Section Styling
+=========================== */
+.ecosystem-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.ecosystem-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #024b6f;
+  margin-bottom: 10px;
+}
+
+.ecosystem-section .intro-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1b88be;
+  margin: 50px 0 20px;
+  text-align: center;
+}
+
+/* ===========================
+   Zoom Animation
+=========================== */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ecosystem-section:hover h2,
+.ecosystem-section:hover .intro-text {
+  animation: zoomIn 0.8s ease forwards;
+}
+
+.ecosystem-section h2,
+.ecosystem-section .intro-text {
+  transform: scale(0.95);
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+
+/* ===========================
+   Ecosystem Cards
+=========================== */
+.ecosystem-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #f9fbfd, #e6f0f9);
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+.ecosystem-card.own {
+  border-left: 6px solid #1b88be;
+}
+
+.ecosystem-card.partner {
+  border-left: 6px solid #024b6f;
+}
+
+.ecosystem-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image */
+.ecosystem-image {
+  flex: 1;
+  min-width: 300px;
+  max-height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.ecosystem-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ecosystem-card:hover .ecosystem-image img {
+  transform: scale(1.08);
+}
+
+/* Details Section */
+.ecosystem-details {
+  flex: 1;
+  padding: 30px 40px;
+  background: linear-gradient(135deg, #f4f8fb 0%, #e6f0f9 100%);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  border-radius: 0 20px 20px 0;
+}
+
+.ecosystem-card.reverse .ecosystem-details {
+  transform: translateX(100%);
+  border-radius: 20px 0 0 20px;
+}
+
+.ecosystem-card:hover .ecosystem-details {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Typography */
+.ecosystem-details h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #024b6f;
+  transition: color 0.3s ease;
+}
+
+.ecosystem-card:hover .ecosystem-details h3 {
+  color: #1b88be;
+}
+
+.ecosystem-details p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Badges */
+.badges {
+  margin: 8px 0;
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 4px 10px;
+  background-color: #1b88be;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.ecosystem-card:hover .badge {
+  background-color: #024b6f;
+}
+
+/* Stats */
+.stats {
+  margin: 12px 0;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Button */
+.ecosystem-details a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #1b88be;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.ecosystem-details a:hover {
+  background: #024b6f;
+  transform: scale(1.05);
+}
+
+/* ===========================
+   DESKTOP ONLY (Hover Works)
+=========================== */
+@media (min-width: 769px) {
+  .ecosystem-card:hover .ecosystem-details {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===========================
+   MOBILE & TABLET (Hover OFF)
+=========================== */
+@media (max-width: 768px) {
+  .ecosystem-card,
+  .ecosystem-card.reverse {
+    flex-direction: column !important;
+  }
+
+  .ecosystem-image {
+    width: 100%;
+    max-height: 260px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  /* Ensure details always visible */
+  .ecosystem-details,
+  .ecosystem-card:hover .ecosystem-details {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    border-radius: 0 0 20px 20px !important;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .ecosystem-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .stats {
+    justify-content: center;
+  }
+}
+
+/* ===========================
+   EXTRA SMALL DEVICES
+=========================== */
+@media (max-width: 480px) {
+  .ecosystem-section h2 {
+    font-size: 2rem;
+  }
+
+  .ecosystem-details {
+    padding: 20px 15px;
+  }
+
+  .ecosystem-details h3 {
+    font-size: 1.3rem;
+  }
+
+  .ecosystem-details a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

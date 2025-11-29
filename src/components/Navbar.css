@@ -1,0 +1,191 @@
+/* =======================
+   Navbar
+======================= */
+.navbar {
+  position: fixed;
+  top: 40px; /* below topbar */
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 70px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: red;
+  cursor: pointer;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a,
+.nav-links span {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+  color: #004aad;
+}
+
+/* Active menu underline */
+.nav-links .active > a,
+.nav-links .active > span {
+  border-bottom: 3px solid #004aad;
+  padding-bottom: 2px;
+}
+
+/* Dropdown for desktop */
+.has-dropdown .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.has-dropdown .dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.has-dropdown .dropdown li a {
+  color: #333;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.has-dropdown .dropdown li a:hover,
+.has-dropdown .dropdown li.active > a {
+  color: #004aad;
+}
+
+/* Hamburger for mobile */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile close button */
+.mobile-close {
+  position: fixed;
+  top: 80px; /* below navbar */
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.mobile-close:hover {
+  color: #004aad;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 992px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 50px; /* below topbar */
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 50px);
+    flex-direction: column;
+    background: #fff;
+    padding-top: 2rem;
+    gap: 0;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .nav-links li a,
+  .nav-links li span {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 992px) {
+    .nav-links li {
+        width: 100%;
+        padding: 2px 2px;
+    }
+}
+
+  /* Mobile dropdown always visible inside menu */
+  .has-dropdown .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    box-shadow: none;
+    padding-left: 15px;
+    max-height: none;
+  }
+
+  /* Hover color effect in mobile */
+  .nav-links li:hover > a,
+  .nav-links li:hover > span {
+    color: #004aad;
+  }
+
+  /* Active underline in mobile */
+  .nav-links li.active > a,
+  .nav-links li.active > span {
+    border-bottom: 3px solid #004aad;
+    padding-bottom: 2px;
+  }
+}
+

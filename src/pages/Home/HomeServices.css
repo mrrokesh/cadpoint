@@ -1,0 +1,92 @@
+.services {
+  text-align: center;
+  padding: 5px 5px;
+  background: #f6f7fb;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  color: #222;
+}
+
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #2563eb;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 20px;
+  
+}
+
+/* Service Card Styling */
+.service-card {
+    margin-top: 35px;
+  background: white;
+  border-radius: 10px;
+  padding: 25px 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  cursor: pointer;
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+/* Image Wrap */
+.img-wrap {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.service-card:hover .img-wrap img {
+  transform: scale(1.12);
+}
+
+/* Text Content */
+.service-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}

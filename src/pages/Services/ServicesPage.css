@@ -1,0 +1,242 @@
+/* ===========================
+   Root Variables
+=========================== */
+:root {
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --primary: #004aad;
+  --primary-dark: #00338a;
+  --text: #1f2937;
+  --muted: #475569;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  color: var(--text);
+}
+
+/* ===========================
+   Section
+=========================== */
+.svc-section {
+  padding: 40px 20px;
+  background: var(--bg);
+  text-align: center;
+}
+
+.svc-title {
+  font-size: 2rem;
+  margin-bottom: 36px;
+}
+
+/* ===========================
+   Cards Grid
+=========================== */
+.svc-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Base card size */
+.svc-card {
+  width: 300px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.svc-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.svc-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.svc-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.12rem;
+}
+
+.svc-short {
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.45;
+  font-size: 0.95rem;
+  flex-grow: 1; /* PUSHES BUTTON DOWN EVENLY */
+}
+
+.svc-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: auto; /* ALWAYS ALIGNS BUTTON EVENLY */
+}
+
+.svc-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* ===========================
+   Popup Overlay
+=========================== */
+.svc-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 25, 0.56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  z-index: 2200;
+}
+
+.svc-popup-box {
+  width: 100%;
+  max-width: 1060px;
+  height: 86vh;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.36);
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.popup-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-left {
+  width: 48%;
+  padding: 28px;
+}
+
+.popup-img {
+  width: 100%;
+  height: calc(86vh - 100px);
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.popup-right {
+  width: 52%;
+  padding: 36px 40px;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.popup-title {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+}
+
+.popup-para {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ===========================
+   MOBILE FIX — Equal Cards
+=========================== */
+@media (max-width: 768px) {
+  .svc-card {
+    width: calc(50% - 12px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Image same height */
+  .svc-img {
+    height: 150px;
+  }
+
+  /* Popup */
+  .svc-popup-box {
+    height: 50vh !important;
+    max-height: 50vh;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .popup-inner {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .popup-left {
+    width: 100%;
+    padding: 0;
+  }
+
+  .popup-img {
+    height: 22vh !important;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .popup-right {
+    width: 100%;
+    padding: 14px 16px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+
+  .svc-close-btn {
+    top: 6px;
+    right: 6px;
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media (max-width: 420px) {
+  .popup-img {
+    height: 20vh !important;
+  }
+}

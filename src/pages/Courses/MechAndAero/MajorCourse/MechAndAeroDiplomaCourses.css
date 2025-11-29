@@ -1,0 +1,463 @@
+/* =========================================================
+   FILTER BAR
+========================================================= */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-item label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #004aad;
+}
+
+.filter-item select {
+  min-width: 160px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #004aad;
+  color: #fff;
+  cursor: pointer;
+}
+
+.view-pdf-link {
+  font-size: 0.9rem;
+  color: #004aad;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   META ROW
+========================================================= */
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.category-label {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  background: #eef6ff;
+  color: #004aad;
+  border-radius: 8px;
+}
+
+.duration-label {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+/* =========================================================
+   SOFTWARE LIST
+========================================================= */
+.course-softwares ul {
+  margin: 6px 0;
+  padding-left: 1rem;
+}
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+.no-results {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+/* =========================================================
+   CONTAINER & HEADING
+========================================================= */
+.courses-container {
+  max-width: 1200px;
+  margin: 120px auto 100px;
+  padding: 0 2rem;
+}
+
+.heading {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #004aad;
+  text-align: center;
+}
+
+/* =========================================================
+   GRID LAYOUT
+========================================================= */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* =========================================================
+   COURSE CARD
+========================================================= */
+.course-card {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Ensures bottom buttons stick to bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.availability {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: green;
+  margin-bottom: 0.5rem;
+}
+
+.duration-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.duration-btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 6px;
+  background: #004aad;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* =========================================================
+   CARD — BUTTON ROW
+========================================================= */
+.course-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-top: auto; /* push to bottom */
+}
+
+.language-btn,
+.enquiry-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #004aad;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  /* Equal height */
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.language-btn:hover,
+.enquiry-btn:hover {
+  background: #0066ff;
+}
+
+/* =========================================================
+   LANGUAGE POPUP
+========================================================= */
+.language-popup {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(-10px);
+  width: 280px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  z-index: 3000;
+  animation: slideFade 0.3s ease forwards;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.language-category {
+  margin-bottom: 0.8rem;
+}
+
+.language-category strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #004aad;
+}
+
+.language-category ul {
+  padding-left: 1rem;
+}
+
+.language-category li {
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* =========================================================
+   ENQUIRY FORM
+========================================================= */
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5000;
+}
+
+.form-box {
+  width: 400px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+}
+
+.form-box h2 {
+  margin-bottom: 1rem;
+  color: #004aad;
+}
+
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.submit-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #004aad;
+  color: #fff;
+  cursor: pointer;
+}
+
+.skip-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #888;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================================================
+   SOFTWARE TOOLS POPUP
+========================================================= */
+.tools-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+  animation: toolsSlideIn 0.35s ease forwards;
+  z-index: 20;
+}
+
+@keyframes toolsSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tools-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tools-title {
+  margin: 5px 0 10px;
+  font-weight: 600;
+  color: #004aad;
+}
+
+.tools-list {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.tools-list li {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .courses-container {
+    padding: 0 1.5rem;
+  }
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .course-card {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  .course-grid {
+    gap: 1.5rem;
+  }
+  .course-card {
+    max-width: 100%;
+  }
+  .form-box {
+    padding: 1.5rem;
+  }
+  .form-box h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+  .course-description {
+    font-size: 0.85rem;
+  }
+  .meta-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .submit-btn,
+  .skip-btn {
+    flex: 1 1 100%;
+  }
+}
+
